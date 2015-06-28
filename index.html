@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Links</title>
+  <link rel="stylesheet" href="dist/styles.css">
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,300italic,300,100,400italic,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header class="container">
+    <h1>Social Share Links <span class="subheader">Simple link-based sharing</span></h1>
+  </header>
+
+  <section class="container">
+    <div class="row">
+
+      <div class="col-md-5">
+        <div class="padded shaded margin-top large">
+
+          <div class="form-group">
+            <label for="url">Link to share</label>
+            <input type="text" name="url" id="url" placeholder="Enter the url you want to share" class="block">
+          </div>
+
+          <hr class="margin-top">
+
+          <p>This site creates simple links for sharing urls on facebook, twitter, Google+ and linkedIn.</p>
+
+          <hr class="margin-top">
+
+          <h4>Need something more dynamic?</h4>
+          <p>Include the following javascript to dynamically get the sharing links for a url:</p>
+          <code>
+function getSocialLinks(url) {
+  if (typeof url === 'undefined') return;
+  if (url.indexOf('http') !== 0) url = 'http://' + url;
+    var encodedUrl = encodeURIComponent(url);
+    return {
+      facebook: 'http://www.facebook.com/sharer/sharer.php?u=' + encodedUrl,
+      twitter: 'https://twitter.com/intent/tweet?url=' + encodedUrl,
+      linkedIn: 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl,
+      googlePlus: 'https://plus.google.com/share?url=' + encodedUrl
+    };
+}
+          </code>
+          <p><strong>Usage</strong></p>
+          <p>
+            Simply pass your url string to the <span class="code">getSocialLinks()</span> function. An object containing the following properties will be returned:
+          </p>
+          <ul class="bullets">
+            <li>facebook</li>
+            <li>twitter</li>
+            <li>linkedIn</li>
+            <li>googlePlus</li>
+          </ul>
+          <p>Each property contains a sharing link for the corresponding service.</p>
+          <p><strong>Examples</strong></p>
+          <code>
+var links = getSocialLinks('http://www.example.com');
+links.twitter;
+// Returns twitter share link
+
+getSocialLinks('http://www.example.com').googlePlus;
+// Gets google plus link in a single line
+          </code>
+        </div>
+      </div>
+
+      <div class="col-md-7" id="results">
+
+        <div id="facebook" class="padded-horizontal">
+          <h3><i class="fa fa-facebook-official"></i>Facebook</h3>
+          <div class="form-group">
+            <label for="facebook-url">Share Link</label>
+            <div class="action-input">
+              <div><input type="text" id="facebook-url" readonly class="block"></div>
+              <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <p><a class="test underlined" target="_blank">Test Link</a></p>
+        </div>
+
+        <hr>
+
+        <div id="twitter" class="padded-horizontal">
+          <h3><i class="fa fa-twitter"></i>Twitter</h3>
+          <div class="form-group">
+            <label for="twitter-url">Share Link</label>
+            <div class="action-input">
+              <div><input type="text" id="twitter-url" readonly class="block"></div>
+              <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <p><a class="test underlined" target="_blank">Test Link</a></p>
+        </div>
+
+        <hr>
+
+        <div id="gplus" class="padded-horizontal">
+          <h3><i class="fa fa-google-plus"></i>Google Plus</h3>
+          <div class="form-group">
+            <label for="gplus-url">Share Link</label>
+            <div class="action-input">
+              <div><input type="text" id="gplus-url" readonly class="block"></div>
+              <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <p><a class="test underlined" target="_blank">Test Link</a></p>
+        </div>
+
+        <hr>
+
+        <div id="linkedin" class="padded-horizontal">
+          <h3><i class="fa fa-linkedin-square"></i>LinkedIn</h3>
+          <div class="form-group">
+            <label for="linkedin-url">Share Link</label>
+            <div class="action-input">
+              <div><input type="text" id="linkedin-url" readonly class="block"></div>
+              <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <p><a class="test underlined" target="_blank">Test Link</a></p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="container margin-top">
+    <hr>
+    <p class="small text-muted">Created by <a href="http://danb.me">Dan Brown</a></p>
+  </footer>
+
+<script src="share.js"></script>
+<script src="social-links.js"></script>
+</body>
+</html>
