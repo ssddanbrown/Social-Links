@@ -52,7 +52,8 @@ function getSocialLinks(url) {
       facebook: 'http://www.facebook.com/sharer/sharer.php?u=' + encodedUrl,
       twitter: 'https://twitter.com/intent/tweet?url=' + encodedUrl,
       linkedIn: 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl,
-      googlePlus: 'https://plus.google.com/share?url=' + encodedUrl
+      googlePlus: 'https://plus.google.com/share?url=' + encodedUrl,
+      reddit: '//www.reddit.com/submit?url=' + encodedUrl
     };
 }
           </code>
@@ -65,6 +66,7 @@ function getSocialLinks(url) {
             <li>twitter</li>
             <li>linkedIn</li>
             <li>googlePlus</li>
+            <li>reddit</li>
           </ul>
           <p>Each property contains a sharing link for the corresponding service.</p>
           <p><strong>Examples</strong></p>
@@ -115,6 +117,20 @@ getSocialLinks('http://www.example.com').googlePlus;
             <label for="gplus-url">Share Link</label>
             <div class="action-input">
               <div><input type="text" id="gplus-url" readonly class="block"></div>
+              <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
+            </div>
+          </div>
+          <p><a class="test underlined" target="_blank">Test Link</a></p>
+        </div>
+
+        <hr>
+
+        <div id="reddit" class="padded-horizontal">
+          <h3><i class="fa fa-reddit"></i>Reddit</h3>
+          <div class="form-group">
+            <label for="reddit-url">Share Link</label>
+            <div class="action-input">
+              <div><input type="text" id="reddit-url" readonly class="block"></div>
               <button type="button" title="Copy to clipboard" class="copy-button"><i class="fa fa-copy"></i></button>
             </div>
           </div>

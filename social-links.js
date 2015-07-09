@@ -7,6 +7,7 @@ function getSocialLinks(url) {
     	facebook: 'http://www.facebook.com/sharer/sharer.php?u=' + encodedUrl,
     	twitter: 'https://twitter.com/intent/tweet?url=' + encodedUrl,
     	linkedIn: 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl,
-    	googlePlus: 'https://plus.google.com/share?url=' + encodedUrl
+    	googlePlus: 'https://plus.google.com/share?url=' + encodedUrl,
+    	reddit: '//www.reddit.com/submit?url=' + encodedUrl
     };
 }

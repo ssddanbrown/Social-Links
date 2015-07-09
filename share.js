@@ -16,6 +16,7 @@
     setTwitterLinks(encodedUrl);
     setGplusLinks(encodedUrl);
     setLinkedinLinks(encodedUrl);
+    setRedditLink(encodedUrl);
   }
 
   function setFacebookLinks(encodedUrl) {
@@ -33,6 +34,12 @@
   	// https://developers.google.com/+/web/share/#share-link
   	var url = 'https://plus.google.com/share?url=' + encodedUrl;
   	setOutput('gplus', url);
+  }
+
+  function setRedditLink(encodedUrl) {
+  	// https://www.reddit.com/buttons/
+  	var url = '//www.reddit.com/submit?url=' + encodedUrl;
+  	setOutput('reddit', url);
   }
 
   function setLinkedinLinks(encodedUrl) {
